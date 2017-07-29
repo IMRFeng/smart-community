@@ -72,6 +72,14 @@ Schools.prototype.eventHandlers.onSessionEnded = function (sessionEndedRequest, 
 };
 
 Schools.prototype.intentHandlers = {
+    "GetProjectInfoIntent": function (intent, session, response) {
+        handleProjectInfoRequest(response);
+    },
+
+    "GetTeamInfoIntent": function (intent, session, response) {
+        handleTeamInfoRequest(response);
+    },
+
     "GetSchoolsIntent": function (intent, session, response) {
         handleNewSchoolsRequest(response);
     },
@@ -98,6 +106,22 @@ Schools.prototype.intentHandlers = {
         response.tell(speechOutput);
     }
 };
+
+function handleProjectInfoRequest(response) {
+    // Create speech output
+    var speechOutput = "Hello everyone, my name is mirror mirror. I am the first generation of smart community, you can ask me any schools in any region, any district of new zealand, please enjoy!";
+    var cardTitle = "Your Project Info";
+    response.tellWithCard(speechOutput, cardTitle, speechOutput);
+
+}
+
+function handleTeamInfoRequest(response) {
+    // Create speech output
+    var speechOutput = "Hack Bros, A talented team in GovHack created me. The team members are David, Dong, Simon, Victor, Shirley and Leo. Please vote for them, thanks!";
+    var cardTitle = "Your Team Info";
+    response.tellWithCard(speechOutput, cardTitle, speechOutput);
+
+}
 
 function handleBestSchoolsRequest(response) {
     var BESTSCHOOLS = "Takapuna Grammar School"
