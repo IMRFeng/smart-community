@@ -126,7 +126,7 @@ function handleTeamInfoRequest(response) {
 function handleBestSchoolsRequest(response) {
     var BESTSCHOOLS = "Takapuna Grammar School"
     // Create speech output
-    var speechOutput = "The best school is " + BESTSCHOOLS + " with decile 10 band. It is the high school from year 9 to year 15 and has 1691 students in total.";
+    var speechOutput = "The best school among these 5 schools is " + BESTSCHOOLS + " with decile 10 band. It is the high school from year 9 to year 15 and has 1691 students in total.";
     var cardTitle = "Your Best Schools";
     response.tellWithCard(speechOutput, cardTitle, speechOutput);
     
@@ -141,7 +141,7 @@ function handleSecondarySchoolsRequest(response) {
         "Rosmini College"
     ]
     // Create speech output
-    var speechOutput = "There are " + SECONDARYSCHOOLS.length + " high schools: " + SECONDARYSCHOOLS.join();
+    var speechOutput = "Among these 22 schools, there are " + SECONDARYSCHOOLS.length + " high schools: " + SECONDARYSCHOOLS.join();
     var cardTitle = "Your Secondary Schools";
     response.tellWithCard(speechOutput, cardTitle, speechOutput);
     
